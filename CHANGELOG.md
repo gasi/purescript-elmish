@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+
+- `Elmish.React.Extra` module with commonly used `if'` and `maybe` functions.
+  Recommended usage:
+
+  ```
+  import Elmish.React.DOM as R
+  import Elmish.React.Extra as R
+  ```
+
 ### Changed
 
 - Use ES3 `function` keyword instead of ES5 arrow functions in JS FFI code so
