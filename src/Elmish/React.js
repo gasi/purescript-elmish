@@ -2,12 +2,17 @@ const React = require("react")
 const ReactDOM = require("react-dom")
 const ReactDOMServer = require("react-dom/server")
 
-exports.getState_ = component => component.state && component.state.s
-exports.setState_ = (component, state, callback) => component.setState({ s: state }, callback)
+exports.getState_ = function (component) {
+  return component.state && component.state.s
+}
+exports.setState_ = function(component, state, callback) {
+  return component.setState({ s: state }, callback)
+}
 
 exports.render_ = ReactDOM.render
 exports.hydrate_ = ReactDOM.hydrate
-exports.renderToString = ReactDOMServer ? ReactDOMServer.renderToString : (_ => "")
+exports.renderToString = ReactDOMServer ?
+  ReactDOMServer.renderToString : function(_) { return "" }
 
 exports.createElement_ = function(component, props, children) {
   // The type of `children` is `Array ReactElement`. If we pass that in as
